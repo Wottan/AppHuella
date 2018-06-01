@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Bienvenido a #[em HuellaLocal]
+
+  h1 Contenido Dinamico
+
+  if error
+    p Error getting dynamic content.
+  else
+    p Cantidad de registros en huella_local:
+
+    ul
+      li #[strong Personas:] !{data.persona_count}

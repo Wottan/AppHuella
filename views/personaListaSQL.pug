@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each persona in personaLista
+    li 
+      a(href=persona.url) #{persona.nombre} 
+      |  (#{persona.apellido})    
+
+  else
+    li No hay personas.

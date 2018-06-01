@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='nombre') Nombre:
+      input#nombre.form-control(type='text', placeholder='Nombre ejemplo (Christian) ' name='nombre' required='true' value=(undefined===persona ? '' : persona.nombre) )
+      label(for='apellido') Apellido:
+      input#apellido.form-control(type='text', placeholder='Apellido' name='apellido' required='true' value=(undefined===persona ? '' : persona.apellido))
+    div.form-group
+      label(for='fechaNacimiento') Fecha De Nacimiento:
+      input#fechaNacimiento.form-control(type='date', name='fechaNacimiento', value=(undefined===persona ? '' : persona.fechaNacimiento) )
+    button.btn.btn-primary(type='submit') Grabar
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
